@@ -6,14 +6,10 @@
 
 ### Members:
 * [Junjie Zhao], BUPT: [2024213535], QM: [241118773], Email: [jp2024213535@qmul.ac.uk]
-* [Mingjie Ma], BUPT: [2024213560], QM: [241118359], Email: [jp2024213560@qmul.ac.uk]
-* [Ziang Wang], BUPT: [2024213533], QM: [241118485], Email: [2024213533@bupt.cn]
 
 ### Assigned TA: Wenjing Yu
 * Email: 294899318@qq.com
 * GitHub Account: Yuwoooo
 
 ### Task Allocation:
-* **[Junjie Zhao]**: Responsible for **Homepage** section.
-* **[Mingjie Ma]**: Responsible for **Game** section.
-* **[Ziang Wang]**: Responsible for **Quiz** section.
+* **[Junjie Zhao]**: Responsible for **Homepage**  **Game** **Quiz** section.
