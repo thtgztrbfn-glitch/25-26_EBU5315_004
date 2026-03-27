@@ -5,11 +5,11 @@
 ### Project Title: [Dynamic Circle Smart Learning]
 
 ### Members:
-* [Junjie Zhao], BUPT: [2024213535], QM: [241118773], Email: [jp2024213535@qmul.ac.uk]
+* [Jincan Xu], BUPT: [2024213550], QM: [241118625], Email: [jp2024213550@qmul.ac.uk]
 
-### Assigned TA: Wenjing Yu
-* Email: 294899318@qq.com
-* GitHub Account: Yuwoooo
+### Assigned TA: Yingnan Zhou
+* Email: 2946214153@qq.com
+* GitHub Account: YINGOF
 
 ### Task Allocation:
-* **[Junjie Zhao]**: Responsible for **Homepage**  **Game** **Quiz** section.
+* **[Jincan Xu]**: Responsible for **Homepage**  **Game** **Quiz** section.
