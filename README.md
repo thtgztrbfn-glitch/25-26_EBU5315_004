@@ -13,3 +13,5 @@
 
 ### Task Allocation:
 * **[Jincan Xu]**: Responsible for **Homepage**  **Game** **Quiz** section.
+
+I would like to inform you that I have been unable to contact the other members of my assigned group despite multiple attempts. Therefore, I would like to request permission to complete the project individually.
