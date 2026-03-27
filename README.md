@@ -6,12 +6,14 @@
 
 ### Members:
 * [Jincan Xu], BUPT: [2024213550], QM: [241118625], Email: [jp2024213550@qmul.ac.uk]
+* [Zhaoyuan Yang], BUPT: [2024213620], QM: [241118681], Email: [jp2024213620@qmul.ac.uk]
 
 ### Assigned TA: Yingnan Zhou
 * Email: 2946214153@qq.com
 * GitHub Account: YINGOF
 
 ### Task Allocation:
-* **[Jincan Xu]**: Responsible for **Homepage**  **Game** **Quiz** section.
+* **[Jincan Xu]**: Responsible for **Homepage**  **Game**  section.
+* **[Zhaoyuan Yang]**: Responsible for **Quiz** section.
 
 I would like to inform you that I have been unable to contact the other members of my assigned group despite multiple attempts. Therefore, I would like to request permission to complete the project individually.
