@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App v3</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>Quiz Application v3</h1>
+            <div class="progress">
+                <span id="progress-text">Question <span id="current-question">1</span> / <span id="total-questions">5</span></span>
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+            <div class="score-display">Score: <span id="score">0</span></div>
+        </div>
+
+        <div id="quiz-content">
+            <h2 id="question"></h2>
+            <div id="answers" class="answers-container"></div>
+        </div>
+
+        <div class="controls">
+            <button id="next-btn" class="btn" disabled>Next Question</button>
+            <button id="restart-btn" class="btn" style="display:none;">Restart Quiz</button>
+        </div>
+
+        <div id="result" class="result-container" style="display:none;">
+            <h2>Quiz Completed!</h2>
+            <p>Your final score: <span id="final-score"></span>/<span id="final-total"></span></p>
+            <p id="performance-text"></p>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
