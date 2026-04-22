@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Theorems - Quiz</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="top-nav">
+        <a href="../index.html" class="nav-item">返回首页</a>
+        <a href="../learning/learning.html" class="nav-item">学习中心</a>
+        <a href="../courses/courses.html" class="nav-item">课程列表</a>
+        <div class="nav-right">
+            <button class="nav-btn">个人中心</button>
+            <button class="nav-btn">设置</button>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-item">测评分级</div>
+            <div class="sidebar-item active">题库管理</div>
+            <div class="sidebar-item">关卡进度</div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <div class="quiz-header">Quiz</div>
+
+            <!-- 第一行：仅保留题干展示区，占满整行 -->
+            <div class="row">
+                <div class="question-area full-width">
+                    <div class="area-title">题干展示区域</div>
+                    <div class="question-display">
+                        <div id="question-text"></div>
+                    </div>
+                    <div class="select-btn-area">
+                        <button class="select-btn">选择按区</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二行：答题选项区7 + 操作按钮区3 -->
+            <div class="row">
+                <div class="options-area" style="flex: 7;">
+                    <div class="area-title">答题选项区</div>
+                    <div id="options-container" class="options-list"></div>
+                </div>
+
+                <div class="action-btn-area" style="flex: 3;">
+                    <div class="area-title white-text">操作按钮区</div>
+                    <div class="btn-group vertical">
+                        <button id="submit-btn" class="action-btn">提交答案</button>
+                        <button id="next-btn" class="action-btn" style="display: none;">下一题</button>
+                        <button id="prev-btn" class="action-btn">上一题</button>
+                        <button id="restart-btn" class="action-btn">重新开始</button>
+                        <button id="goto-levels-btn" class="action-btn">进入选关页面</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第三行：反馈区 + 跳转区 -->
+            <div class="row">
+                <div class="feedback-area">
+                    <div class="area-title white-text">即时互动反馈区</div>
+                    <div class="feedback-buttons">
+                        <div class="feedback-btn" id="feedback-score">得分: 0/5</div>
+                        <div class="feedback-btn" id="feedback-correct">正确: 0</div>
+                        <div class="feedback-btn" id="feedback-wrong">错误: 0</div>
+                        <div class="feedback-btn" id="feedback-status">状态: 未作答</div>
+                    </div>
+                </div>
+
+                <div class="nav-area">
+                    <div class="area-title">子页面入口跳转</div>
+                    <div class="nav-links">
+                        <a href="../index.html" class="nav-link">返回首页</a>
+                        <a href="../game/game.html" class="nav-link">进入游戏</a>
+                        <a href="../learning/learning.html" class="nav-link">学习中心</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
