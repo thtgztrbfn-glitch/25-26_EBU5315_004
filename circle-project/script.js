@@ -93,3 +93,26 @@ window.addEventListener("scroll", handleScroll);
 
 // 页面加载时执行一次（防止首屏不显示）
 handleScroll();
+function sendMessage() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    let status = document.getElementById("form-status");
+
+    if(name === "" || email === "" || message === "") {
+        status.innerText = "Please fill in all fields.";
+        status.style.color = "red";
+        return;
+    }
+
+    status.innerText = "Sending...";
+
+    setTimeout(() => {
+        status.innerText = "Message sent successfully!";
+        status.style.color = "#4CAF50";
+
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+    }, 800);
+}
