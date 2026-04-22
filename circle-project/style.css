@@ -1,174 +1,111 @@
-/* Hero */
-.hero {
-    padding: 100px 20px;
-    background: linear-gradient(to right, #4A90E2, #7B61FF);
-    color: white;
-}
-}
-
-/* Button（统一风格） */
-.btn, button {
-    display: inline-block;
-    padding: 12px 28px;
-    background: linear-gradient(to right, #2c3e9e, #4a54d6);
-    color: #f0f4ff;   
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-.btn:hover, button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-.btn:active, button:active {
-    transform: translateY(0px);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-}
-/* Rules */
-.rules {
-    background: rgba(255, 255, 255, 0.7); 
-    backdrop-filter: blur(10px); 
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    
-    padding: 20px;
-    width: 250px;
-    border-radius: 10px;
-    margin: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: 0.3s; /* 统一过渡动画 */
+/* =========================================
+   1. 全局基础样式 (Global Settings)
+   ========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f8f9ff;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Card */
-.rule-card {
-    background: white;
-    padding: 20px;
-    width: 250px;
-    border-radius: 10px;
-    margin: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.rule-card:hover {
-    transform: scale(1.05);
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* AI */
-.ai {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    padding: 20px;
-    border: 1px solid rgba(74, 144, 226, 0.3);
-    z-index: 2000;
-}
-
-.ai h2 { font-size: 1.2rem; margin-bottom: 10px; color: #2c3e9e; }
-.ai input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-}
-/* Contact */
-.contact {
-    padding: 60px 20px;
-    background: #eef2f7;
-}
-/* --- 新增：深色模式 (Dark Mode) --- */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1a1a1a;
-        color: #f0f0f0;
-    }
-    .rules {
-        background: #252525;
-    }
-    .rule-card {
-        background: rgba(50, 50, 50, 0.8);
-        color: white;
-    }
-    .ai {
-        background: #1e2a4a;
-    }
-}
-/* 1. 背景装饰圆圈样式 */
-.bg-circles {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1; /* 确保在所有内容下面 */
-    overflow: hidden;
-    background-color: #f8f9ff; /* 基础背景色 */
+/* =========================================
+   2. 背景装饰 (Background Decoration)
+   ========================================= */
+.bg-decoration {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; overflow: hidden;
 }
 .circle {
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(123, 97, 255, 0.1));
+    position: absolute; border-radius: 50%;
+    background: linear-gradient(135deg, rgba(74,144,226,0.1), rgba(123,97,255,0.1));
 }
-.c1 { width: 500px; height: 500px; top: -150px; right: -100px; }
-.c2 { width: 300px; height: 300px; bottom: 5%; left: -50px; }
+.circle-large { width: 500px; height: 500px; top: -100px; right: -100px; }
+.circle-small { width: 300px; height: 300px; bottom: 10%; left: -50px; }
 
-/* 2. 导航栏磨砂玻璃效果 (更新你原来的 nav) */
-nav {
-    position: sticky; 
-    top: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.8); 
-    backdrop-filter: blur(15px); /* 核心：模糊感 */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 15px 50px;
+/* =========================================
+   3. 导航栏 (Navigation Bar)
+   ========================================= */
+.main-nav {
+    position: sticky; top: 0; z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 5%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
+.logo { font-size: 1.5rem; font-weight: bold; color: #2c3e9e; cursor: pointer; }
+.nav-links { display: flex; align-items: center; gap: 25px; }
+.nav-links a { text-decoration: none; color: #444; font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: #4A90E2; }
 
-/* 3. Hero 动态渐变背景动画 */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+/* =========================================
+   4. 面包屑 (Breadcrumbs)
+   ========================================= */
+.breadcrumb-container { padding: 12px 5%; font-size: 0.85rem; color: #888; }
+.breadcrumb-container a { color: #4A90E2; text-decoration: none; }
 
-.hero {
+/* =========================================
+   5. Hero 区域 (Hero Section)
+   ========================================= */
+@keyframes bgglow { 0% {background-position:0% 50%} 50% {background-position:100% 50%} 100% {background-position:0% 50%} }
+.hero-section {
+    padding: 80px 5%; text-align: center; color: white;
     background: linear-gradient(-45deg, #4A90E2, #7B61FF, #3A7BD5, #00D2FF);
     background-size: 400% 400%;
-    animation: gradientMove 12s ease infinite;
-    padding: 120px 20px;
-    color: white;
+    animation: bgglow 15s ease infinite;
+}
+.btn-main {
+    display: inline-block; margin-top: 20px; padding: 12px 35px;
+    background: white; color: #2c3e9e; font-weight: bold;
+    border-radius: 30px; text-decoration: none; transition: 0.3s;
+}
+.btn-main:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+/* =========================================
+   6. 知识卡片 (Info Cards)
+   ========================================= */
+.cards-grid { display: flex; justify-content: center; flex-wrap: wrap; padding: 40px 5%; }
+.info-card {
+    background: white; padding: 30px; margin: 15px; width: 300px;
+    border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: 0.3s; border: 1px solid rgba(0,0,0,0.02);
+}
+.info-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(74,144,226,0.15); }
+
+/* =========================================
+   7. AI 悬浮窗 (AI Floating Widget)
+   ========================================= */
+.ai-floating-widget {
+    position: fixed; bottom: 25px; right: 25px; width: 320px;
+    background: white; border-radius: 18px; z-index: 2000;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    display: flex; flex-direction: column; overflow: hidden;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* 隐藏类 */
+.ai-hidden { transform: scale(0); opacity: 0; pointer-events: none; }
+
+.ai-header { background: #2c3e9e; color: white; padding: 15px; display: flex; justify-content: space-between; }
+.ai-close-x { background: none; border: none; color: white; font-size: 20px; cursor: pointer; }
+.ai-body { height: 200px; padding: 15px; background: #fcfcfc; overflow-y: auto; }
+.bot-text { background: #eef2f7; padding: 10px; border-radius: 10px; font-size: 0.9rem; }
+.ai-footer { padding: 10px; display: flex; border-top: 1px solid #eee; }
+.ai-footer input { flex: 1; border: none; outline: none; padding: 5px; }
+
+/* 激活按钮 */
+.ai-open-trigger {
+    position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px;
+    border-radius: 50%; background: #2c3e9e; color: white; border: none;
+    font-size: 24px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: none; /* 默认隐藏，窗体关闭时显示 */
 }
 
-/* 4. 卡片微调：让它看起来更轻盈 */
-.rule-card {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
-}  
+/* =========================================
+   8. 多语言按钮 (Language Button)
+   ========================================= */
 .lang-btn {
-    background: transparent !important;
-    color: #4A90E2 !important;
-    border: 1.5px solid #4A90E2 !important;
-    padding: 6px 15px !important;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
+    background: transparent; border: 1.5px solid #4A90E2; color: #4A90E2;
+    padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold;
 }
-
-.lang-btn:hover {
-    background: #4A90E2 !important;
-    color: white !important;
-}
-.breadcrumb {
-    padding: 15px 50px;
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.3);
-}
-.breadcrumb a { color: #4A90E2; text-decoration: none; }
-.breadcrumb span { color: #999; margin: 0 5px; }
+.lang-btn:hover { background: #4A90E2; color: white; }
