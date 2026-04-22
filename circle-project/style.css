@@ -1,7 +1,9 @@
 /* Hero */
 .hero {
-    padding: 80px 20px;
-    background: #eef3ff;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #4A90E2, #7B61FF);
+    color: white;
+}
 }
 
 /* Button（统一风格） */
@@ -17,17 +19,22 @@
 
 /* Rules */
 .rules {
-    padding: 40px 20px;
+    padding: 60px 20px;
+    background: #eef2f7;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Card */
 .rule-card {
     background: white;
-    margin: 20px auto;
     padding: 20px;
-    width: 80%;
-    max-width: 400px;
+    width: 250px;
     border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .rule-card:hover {
@@ -39,7 +46,7 @@
 /* AI */
 .ai {
     padding: 40px;
-    background: #eef3ff;
+    background: #dde6ff;
 }
 
 .ai input {
@@ -49,5 +56,6 @@
 
 /* Contact */
 .contact {
-    padding: 40px;
+    padding: 60px 20px;
+    background: #eef2f7;
 }
