@@ -30,3 +30,50 @@ window.onload = () => {
     // 默认可以给 AI 助手加一个微小的出场延迟，增加动效感
     console.log("CircleLearn v2.2 initialized.");
 };
+function askAI() {
+    let input = document.getElementById("ai-input");
+    let chatBox = document.getElementById("chat-box");
+
+    let userText = input.value.toLowerCase();
+
+    if(userText === "") return;
+
+    // 显示用户消息
+    let userMsg = document.createElement("p");
+    userMsg.className = "user-text";
+    userMsg.innerText = "You: " + userText;
+    chatBox.appendChild(userMsg);
+
+    // 清空输入框
+    input.value = "";
+
+    // AI思考
+    let botMsg = document.createElement("p");
+    botMsg.className = "bot-text";
+    botMsg.innerText = "AI is thinking...";
+    chatBox.appendChild(botMsg);
+
+    // 延迟模拟思考
+    setTimeout(() => {
+
+        if(userText.includes("semicircle")) {
+            botMsg.innerText = "The angle in a semicircle is always 90°.";
+        }
+        else if(userText.includes("tangent")) {
+            botMsg.innerText = "A tangent is perpendicular to the radius at the point of contact.";
+        }
+        else if(userText.includes("radius")) {
+            botMsg.innerText = "A radius connects the center of the circle to its edge.";
+        }
+        else {
+            botMsg.innerText = "I can help with topics like semicircle, tangent, and radius!";
+        }
+
+        // 自动滚动到底部
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+    }, 800);
+
+    // 滚动到底部
+    chatBox.scrollTop = chatBox.scrollHeight;
+}

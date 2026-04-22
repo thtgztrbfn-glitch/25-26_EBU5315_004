@@ -109,3 +109,14 @@ body {
     padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold;
 }
 .lang-btn:hover { background: #4A90E2; color: white; }
+.user-text {
+    text-align: right;
+    color: #333;
+    margin: 8px 0;
+}
+
+.bot-text {
+    text-align: left;
+    color: #4A90E2;
+    margin: 8px 0;
+}
