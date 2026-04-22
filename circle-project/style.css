@@ -149,3 +149,34 @@ body {
     margin-top: 10px;
     font-size: 14px;
 }
+/* =========================================
+   手机端适配：解决导航栏重叠与卡片溢出
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. 导航栏改为垂直居中布局 */
+    .main-nav {
+        flex-direction: column; 
+        padding: 10px;
+    }
+    .nav-links {
+        margin-top: 15px;
+        gap: 15px; /* 按钮间距缩小 */
+    }
+
+    /* 2. 卡片在手机上垂直排列并占满宽度 */
+    .info-card {
+        width: 90%; 
+        margin: 10px auto;
+    }
+
+    /* 3. Hero 文字在小屏上缩小防止换行难看 */
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 600px) {
+    .main-nav { flex-direction: column; height: auto; }
+    .nav-links { margin: 10px 0; gap: 10px; }
+    .hero-section h1 { font-size: 1.5rem; }
+    .info-card { width: 95%; margin: 10px auto; }
+}

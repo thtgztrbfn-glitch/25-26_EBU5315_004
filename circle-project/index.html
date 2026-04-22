@@ -26,7 +26,7 @@
 
 
     <div class="breadcrumb-container">
-        <a href="index.html">Home</a> 
+        <a href="index.html" id="breadcrumb-home">Home</a> 
         <span>/</span> 
         <strong id="current-page">Main Page</strong>
     </div>
@@ -41,27 +41,34 @@
         </section>
 
         <section class="cards-grid fade-in">
-            <div class="info-card">
-                <h3>Angle in a Semicircle</h3>
-                <p>The angle in a semicircle is always 90°.</p>
-            </div>
-            
-            <div class="info-card">
-                <h3>Tangent and Radius</h3>
-                <p>A tangent is perpendicular to the radius at the point of contact.</p>
+            <div class="visual-aid" style="text-align: center; margin-bottom: 10px;">
+                 <svg width="100" height="60" viewBox="0 0 100 60">
+                     <path d="M 10 50 A 40 40 0 0 1 90 50 Z" fill="none" stroke="#4A90E2" stroke-width="3"/>
+                     <path d="M 10 50 L 50 10 L 90 50" fill="none" stroke="#7B61FF" stroke-width="2"/>
+                 </svg>
+                 <h3 id="card-1-title">Angle in a Semicircle</h3>
+                 <p id="card-1-desc">The angle in a semicircle is always 90°.</p>
+             </div>
+            <div class="visual-aid" style="text-align: center; margin-bottom: 10px;">
+                 <svg width="100" height="80" viewBox="0 0 100 80">
+                     <circle cx="50" cy="40" r="25" fill="none" stroke="#4A90E2" stroke-width="3"/>
+                      <line x1="75" y1="10" x2="75" y2="70" stroke="#333" stroke-width="2"/>
+                 </svg>
+                 <h3 id="card-2-title">Tangent and Radius</h3>
+                 <p id="card-2-desc">A tangent is perpendicular to the radius at the point of contact.</p>
             </div>
         </section>
 
     </main>
     
     <section class="contact fade-in">
-    <h2>Contact Us</h2>
+    <h2 id="contact-title">Contact Us</h2>
 
-    <input type="text" id="name" placeholder="Your Name">
-    <input type="email" id="email" placeholder="Your Email">
-    <textarea id="message" placeholder="Your Message"></textarea>
+    <input type="text" id="name-input" placeholder="Your Name">
+    <input type="email" id="email-input" placeholder="Your Email">
+    <textarea id="msg-input" placeholder="Your Message"></textarea>
 
-    <button onclick="sendMessage()">Send Message</button>
+    <button id="send-btn" onclick="sendMessage()">Send Message</button>
 
     <p id="form-status"></p>
 </section>
@@ -69,17 +76,17 @@
 
     <div class="ai-floating-widget" id="ai-widget">
         <div class="ai-header">
-            <span>🤖 Circle AI Assistant</span>
+            <span id="ai-title">🤖 Circle AI Assistant</span>
             <button class="ai-close-x" onclick="toggleAI()">×</button>
         </div>
         
         <div class="ai-body" id="chat-box">
-            <p class="bot-text">Hi! How can I help you with circle theorems today?</p>
+            <p class="bot-text" id="ai-welcome">Hi! How can I help you with circle theorems today?</p>
         </div>
         
         <div class="ai-footer">
             <input type="text" id="ai-input" placeholder="Type your question...">
-            <button class="ai-send-btn" onclick="askAI()">Send</button>
+            <button class="ai-send-btn" id="ai-send-btn" onclick="askAI()">Send</button>
         </div>
     </div>
 
@@ -87,7 +94,7 @@
 
 
     <footer class="main-footer">
-        <p>© 2026 CircleLearn. Coursework Project.</p>
+        <p id="footer-text">© 2026 CircleLearn. Coursework Project.</p>
     </footer>
 
 

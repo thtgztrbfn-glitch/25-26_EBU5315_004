@@ -16,11 +16,97 @@ function toggleAI() {
 }
 
 /* =========================================
-   2. 语言切换逻辑 (预留)
+   翻译字典与语言切换
    ========================================= */
+const translations = {
+    'en': {
+        'nav-home': 'Home',
+        'nav-quiz': 'Quiz',
+        'lang-btn': '中文',
+        'breadcrumb-home': 'Home',
+        'current-page': 'Main Page',
+        'hero-title': 'Learn Circle Geometry Easily',
+        'hero-desc': 'Interactive theorems and visual proofs designed for students.',
+        'hero-btn': 'Start Quiz',
+        'card-1-title': 'Angle in a Semicircle',
+        'card-1-desc': 'The angle in a semicircle is always 90°.',
+        'card-2-title': 'Tangent and Radius',
+        'card-2-desc': 'A tangent is perpendicular to the radius at the point of contact.',
+        'contact-title': 'Contact Us',
+        'send-btn': 'Send Message',
+        'ai-title': '🤖 Circle AI Assistant',
+        'ai-welcome': 'Hi! How can I help you with circle theorems today?',
+        'footer-text': '© 2026 CircleLearn. Coursework Project.',
+        // 占位符特殊处理
+        'name-input': 'Your Name',
+        'email-input': 'Your Email',
+        'msg-input': 'Your Message',
+        'ai-input': 'Type your question...'
+    },
+    'zh': {
+        'nav-home': '首页',
+        'nav-quiz': '测验',
+        'lang-btn': 'English',
+        'breadcrumb-home': '首页',
+        'current-page': '主页说明',
+        'hero-title': '轻松学习圆几何',
+        'hero-desc': '专为学生设计的交互式定理与视觉证明。',
+        'hero-btn': '开始练习',
+        'card-1-title': '半圆上的圆周角',
+        'card-1-desc': '半圆所对的圆周角永远是 90°。',
+        'card-2-title': '切线与半径',
+        'card-2-desc': '圆的切线垂直于过切点的半径。',
+        'contact-title': '联系我们',
+        'send-btn': '发送消息',
+        'ai-title': '🤖 圆几何 AI 助手',
+        'ai-welcome': '你好！今天想了解哪些关于圆的定理？',
+        'footer-text': '© 2026 CircleLearn. 课程作业项目。',
+        // 占位符特殊处理
+        'name-input': '您的姓名',
+        'email-input': '您的邮箱',
+        'msg-input': '您的留言',
+        'ai-input': '输入您的问题...'
+    }
+};
+function applyLanguage(lang) {
+    const data = translations[lang];
+    
+    Object.keys(data).forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            // 如果是输入框或文本域，修改 placeholder
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = data[id];
+            } else {
+                // 普通标签修改 innerText
+                element.innerText = data[id];
+            }
+        }
+    });
+
+    // 存入本地存储，这样刷新页面后语言不会变回英文
+    localStorage.setItem('preferredLang', lang);
+}
+
+/* =========================================
+   3. 事件监听：让按钮点击生效
+   ========================================= */
+
+// 1. 监听切换按钮的点击
 document.getElementById('lang-toggle').addEventListener('click', function() {
-    // 你可以在这里放入之前写的翻译词典逻辑
-    console.log("Language toggle clicked - Ready for translation logic.");
+    // 如果当前按钮文字是 "中文"，说明用户想切到中文 (zh)
+    // 如果不是，说明想切回英文 (en)
+    const nextLang = this.innerText === '中文' ? 'zh' : 'en';
+    
+    // 调用我们在第2部分写好的 applyLanguage 函数
+    applyLanguage(nextLang);
+});
+
+// 2. 页面一打开，就自动加载之前保存过的语言
+window.addEventListener('DOMContentLoaded', () => {
+    // 看看浏览器里有没有存过语言，如果没有，默认用英文 'en'
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    applyLanguage(savedLang);
 });
 
 /* =========================================
