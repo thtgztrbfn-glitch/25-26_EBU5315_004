@@ -77,3 +77,19 @@ function askAI() {
     // 滚动到底部
     chatBox.scrollTop = chatBox.scrollHeight;
 }
+const fadeElements = document.querySelectorAll(".fade-in");
+
+function handleScroll() {
+    fadeElements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        
+        if(top < window.innerHeight - 100) {
+            el.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", handleScroll);
+
+// 页面加载时执行一次（防止首屏不显示）
+handleScroll();
