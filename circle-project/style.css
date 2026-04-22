@@ -58,16 +58,27 @@
 
 /* AI */
 .ai {
-    padding: 40px;
-    background: #dde6ff;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    padding: 20px;
+    border: 1px solid rgba(74, 144, 226, 0.3);
+    z-index: 2000;
 }
 
+.ai h2 { font-size: 1.2rem; margin-bottom: 10px; color: #2c3e9e; }
 .ai input {
+    width: 100%;
     padding: 10px;
-    width: 250px;
-    margin-right: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
 }
-
 /* Contact */
 .contact {
     padding: 60px 20px;
@@ -138,3 +149,26 @@ nav {
     border: 1px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
 }  
+.lang-btn {
+    background: transparent !important;
+    color: #4A90E2 !important;
+    border: 1.5px solid #4A90E2 !important;
+    padding: 6px 15px !important;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lang-btn:hover {
+    background: #4A90E2 !important;
+    color: white !important;
+}
+.breadcrumb {
+    padding: 15px 50px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.3);
+}
+.breadcrumb a { color: #4A90E2; text-decoration: none; }
+.breadcrumb span { color: #999; margin: 0 5px; }
