@@ -23,6 +23,9 @@ const quizData = {
     ]
 };
 
+// 定义各题要选中的选项（a/c/b/a/c 对应第1-5题）
+const targetSelectedOptions = ['a', 'c', 'b', 'a', 'c'];
+
 let currentLevel = "level1";
 let currentQuestionIndex = 0;
 let score = 0;
@@ -51,6 +54,16 @@ function getLevelFromURL() {
     }
 }
 
+// 随机打乱数组（Fisher-Yates 洗牌算法）
+function shuffleArray(array) {
+    const newArray = [...array]; // 深拷贝原数组，避免修改原题库
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
+
 // 初始化题目
 function loadQuestion() {
     const questions = quizData[currentLevel];
@@ -59,14 +72,29 @@ function loadQuestion() {
     optionsContainer.innerHTML = '';
     selectedAnswer = null;
 
+    // 随机打乱选项数组（保证所有选项都出现且顺序随机）
+    const shuffledOptions = shuffleArray(currentQuestion.o);
+
     // 生成选项
-    currentQuestion.o.forEach((option, index) => {
+    shuffledOptions.forEach((option, index) => {
         const optionEl = document.createElement('div');
         optionEl.className = 'option-item';
         optionEl.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
         optionEl.addEventListener('click', () => selectOption(optionEl, option));
         optionsContainer.appendChild(optionEl);
     });
+
+    // 自动选中指定选项（a/c/b/a/c 对应第1-5题）
+    const targetOption = targetSelectedOptions[currentQuestionIndex];
+    if (targetOption) {
+        // 将字母转为索引（a=0, b=1, c=2）
+        const targetIndex = targetOption.toLowerCase().charCodeAt(0) - 97;
+        const optionElements = document.querySelectorAll('.option-item');
+        if (optionElements[targetIndex]) {
+            // 触发选中逻辑
+            selectOption(optionElements[targetIndex], shuffledOptions[targetIndex]);
+        }
+    }
 
     // 更新状态
     feedbackStatus.textContent = "状态: 未作答";
