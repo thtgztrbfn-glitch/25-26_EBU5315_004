@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Theorems - Level Progress</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="level-progress.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="top-nav">
+        <a href="../index.html" class="nav-item">返回首页</a>
+        <a href="../learning/learning.html" class="nav-item">学习中心</a>
+        <a href="../courses/courses.html" class="nav-item">课程列表</a>
+        <div class="nav-right">
+            <button class="nav-btn">个人中心</button>
+            <button class="nav-btn">设置</button>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-item">测评分级</div>
+            <div class="sidebar-item">题库管理</div>
+            <div class="sidebar-item active">关卡进度</div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <div class="progress-header">关卡进度</div>
+
+            <div class="level-container">
+                <!-- 关卡1 -->
+                <div class="level-card" id="level1-card">
+                    <div class="level-title">关卡1：基础题</div>
+                    <div class="level-desc">基础圆定理概念题</div>
+                    <div class="level-status" id="level1-status">未解锁</div>
+                    <button class="level-btn" id="level1-btn" onclick="startLevel('level1')">开始挑战</button>
+                </div>
+
+                <!-- 关卡2 -->
+                <div class="level-card locked" id="level2-card">
+                    <div class="level-title">关卡2：进阶题</div>
+                    <div class="level-desc">基础应用与计算</div>
+                    <div class="level-status" id="level2-status">未解锁</div>
+                    <button class="level-btn" id="level2-btn" disabled onclick="startLevel('level2')">已锁定</button>
+                </div>
+
+                <!-- 关卡3 -->
+                <div class="level-card locked" id="level3-card">
+                    <div class="level-title">关卡3：难题</div>
+                    <div class="level-desc">综合应用与证明</div>
+                    <div class="level-status" id="level3-status">未解锁</div>
+                    <button class="level-btn" id="level3-btn" disabled onclick="startLevel('level3')">已锁定</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="level-progress.js"></script>
+</body>
+</html>

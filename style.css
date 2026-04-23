@@ -1,0 +1,182 @@
+/* =========================================
+   1. 全局基础样式 (Global Settings)
+   ========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f8f9ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. 背景装饰 (Background Decoration)
+   ========================================= */
+.bg-decoration {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; overflow: hidden;
+}
+.circle {
+    position: absolute; border-radius: 50%;
+    background: linear-gradient(135deg, rgba(74,144,226,0.1), rgba(123,97,255,0.1));
+}
+.circle-large { width: 500px; height: 500px; top: -100px; right: -100px; }
+.circle-small { width: 300px; height: 300px; bottom: 10%; left: -50px; }
+
+/* =========================================
+   3. 导航栏 (Navigation Bar)
+   ========================================= */
+.main-nav {
+    position: sticky; top: 0; z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 5%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.logo { font-size: 1.5rem; font-weight: bold; color: #2c3e9e; cursor: pointer; }
+.nav-links { display: flex; align-items: center; gap: 25px; }
+.nav-links a { text-decoration: none; color: #444; font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: #4A90E2; }
+
+/* =========================================
+   4. 面包屑 (Breadcrumbs)
+   ========================================= */
+.breadcrumb-container { padding: 12px 5%; font-size: 0.85rem; color: #888; }
+.breadcrumb-container a { color: #4A90E2; text-decoration: none; }
+
+/* =========================================
+   5. Hero 区域 (Hero Section)
+   ========================================= */
+@keyframes bgglow { 0% {background-position:0% 50%} 50% {background-position:100% 50%} 100% {background-position:0% 50%} }
+.hero-section {
+    padding: 80px 5%; text-align: center; color: white;
+    background: linear-gradient(-45deg, #4A90E2, #7B61FF, #3A7BD5, #00D2FF);
+    background-size: 400% 400%;
+    animation: bgglow 15s ease infinite;
+}
+.btn-main {
+    display: inline-block; margin-top: 20px; padding: 12px 35px;
+    background: white; color: #2c3e9e; font-weight: bold;
+    border-radius: 30px; text-decoration: none; transition: 0.3s;
+}
+.btn-main:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+/* =========================================
+   6. 知识卡片 (Info Cards)
+   ========================================= */
+.cards-grid { display: flex; justify-content: center; flex-wrap: wrap; padding: 40px 5%; }
+.info-card {
+    background: white; padding: 30px; margin: 15px; width: 300px;
+    border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: 0.3s; border: 1px solid rgba(0,0,0,0.02);
+}
+.info-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(74,144,226,0.15); }
+
+/* =========================================
+   7. AI 悬浮窗 (AI Floating Widget)
+   ========================================= */
+.ai-floating-widget {
+    position: fixed; bottom: 25px; right: 25px; width: 320px;
+    background: white; border-radius: 18px; z-index: 2000;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    display: flex; flex-direction: column; overflow: hidden;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* 隐藏类 */
+.ai-hidden { transform: scale(0); opacity: 0; pointer-events: none; }
+
+.ai-header { background: #2c3e9e; color: white; padding: 15px; display: flex; justify-content: space-between; }
+.ai-close-x { background: none; border: none; color: white; font-size: 20px; cursor: pointer; }
+.ai-body { height: 200px; padding: 15px; background: #fcfcfc; overflow-y: auto; }
+.bot-text { background: #eef2f7; padding: 10px; border-radius: 10px; font-size: 0.9rem; }
+.ai-footer { padding: 10px; display: flex; border-top: 1px solid #eee; }
+.ai-footer input { flex: 1; border: none; outline: none; padding: 5px; }
+
+/* 激活按钮 */
+.ai-open-trigger {
+    position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px;
+    border-radius: 50%; background: #2c3e9e; color: white; border: none;
+    font-size: 24px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: none; /* 默认隐藏，窗体关闭时显示 */
+}
+
+/* =========================================
+   8. 多语言按钮 (Language Button)
+   ========================================= */
+.lang-btn {
+    background: transparent; border: 1.5px solid #4A90E2; color: #4A90E2;
+    padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold;
+}
+.lang-btn:hover { background: #4A90E2; color: white; }
+.user-text {
+    text-align: right;
+    color: #333;
+    margin: 8px 0;
+}
+
+.bot-text {
+    text-align: left;
+    color: #4A90E2;
+    margin: 8px 0;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact input,
+.contact textarea {
+    display: block;
+    margin: 10px auto;
+    padding: 12px;
+    width: 250px;
+    border-radius: 8px;
+    border: none;
+}
+
+#form-status {
+    margin-top: 10px;
+    font-size: 14px;
+}
+/* =========================================
+   手机端适配：解决导航栏重叠与卡片溢出
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. 导航栏改为垂直居中布局 */
+    .main-nav {
+        flex-direction: column; 
+        padding: 10px;
+    }
+    .nav-links {
+        margin-top: 15px;
+        gap: 15px; /* 按钮间距缩小 */
+    }
+
+    /* 2. 卡片在手机上垂直排列并占满宽度 */
+    .info-card {
+        width: 90%; 
+        margin: 10px auto;
+    }
+
+    /* 3. Hero 文字在小屏上缩小防止换行难看 */
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 600px) {
+    .main-nav { flex-direction: column; height: auto; }
+    .nav-links { margin: 10px 0; gap: 10px; }
+    .hero-section h1 { font-size: 1.5rem; }
+    .info-card { width: 95%; margin: 10px auto; }
+}
